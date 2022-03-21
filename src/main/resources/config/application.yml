@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ms-auth
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
