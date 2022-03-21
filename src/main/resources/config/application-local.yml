@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://y-postgres-postgresql.default.svc.cluster.local/auth
     username: postgres
-    password: QIUVH0GSzE
+    password: Pass1234
+    url: jdbc:postgresql://localhost:5432/unitech
   jpa:
     hibernate:
       ddl-auto: update
@@ -17,5 +17,3 @@ spring:
 
 server:
   port: 8090
-
-
