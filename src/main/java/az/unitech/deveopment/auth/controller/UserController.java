@@ -17,6 +17,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.net.URI;
 
@@ -28,14 +29,13 @@ public class UserController {
     private final UserService userService;
     private final TokenService tokenService;
 
-
-    @GetMapping("/user/{username}")
-    public ResponseEntity<User> getUser(@PathVariable String username) {
-        return ResponseEntity.ok().body(userService.getUser(username));
+    @GetMapping("/user/{documentPin}")
+    public ResponseEntity<User> getUser(@PathVariable String documentPin) {
+        return ResponseEntity.ok().body(userService.getUser(documentPin));
     }
 
     @PostMapping("/sign-up")
-    public ResponseEntity<UserDto> saveUser(@RequestBody UserCreateDto userCreateDto) {
+    public ResponseEntity<UserDto> saveUser(@RequestBody @Valid UserCreateDto userCreateDto) {
         URI uri = URI.create(ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/api/auth/sign-up").toUriString());
         return ResponseEntity.created(uri).body(userService.saveUser(userCreateDto));

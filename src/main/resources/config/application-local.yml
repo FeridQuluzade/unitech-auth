@@ -1,8 +1,8 @@
 spring:
   datasource:
+    url: jdbc:postgresql://137.184.247.91:5432/postgres
     username: postgres
-    password: Pass1234
-    url: jdbc:postgresql://localhost:5432/unitech
+    password: Iu2sJjLdEY
   jpa:
     hibernate:
       ddl-auto: update

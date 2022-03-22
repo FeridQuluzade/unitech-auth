@@ -3,6 +3,9 @@ spring:
     url: jdbc:postgresql://y-postgres-postgresql.default.svc.cluster.local/auth
     username: postgres
     password: QIUVH0GSzE
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
   jpa:
     hibernate:
       ddl-auto: update
